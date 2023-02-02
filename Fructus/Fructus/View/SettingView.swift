@@ -10,7 +10,7 @@ import SwiftUI
 struct SettingView: View {
     //MARK: - PROPERTY
     @Environment(\.presentationMode) var presentationMode
-    
+    @AppStorage("isOnboarding") var isOnboarding: Bool = false
     var body: some View {
         NavigationView{
             ScrollView(.vertical, showsIndicators: false){
@@ -32,13 +32,27 @@ struct SettingView: View {
                         }
                     }.padding()
                     //MARK: - SECTION 2
+                    GroupBox(
+                    label: SettingsLabelView(labelText: "Customization", labelImage: "paintbrush")
+                    ){
+                        Divider().padding(.vertical,4)
+                        Text("Questa funzionalità ti permette di ripartire dalla schermata onboarding")
+                            .padding(.vertical,8)
+                            .frame(minHeight: 60)
+                            .layoutPriority(1)
+                            .font(.footnote)
+                            .multilineTextAlignment(.leading)
+                            
+                        Toggle(isOn: $isOnboarding, label: {
+                            Text("Restart".uppercased())
+                                .padding()
+                        })
+                    }.padding()
                     
                     //MARK: - SECTION 3
                     GroupBox(label:
                                 SettingsLabelView(labelText: "Application",labelImage: "apps.iphone"))
                             {
-                                
-                                
                                 SettingsRowView(name: "Design", content: "Swift Course")
                                 SettingsRowView(name: "Compatibility", content: "iOS 16")
                                 SettingsRowView(name: "Website", linkLabel: "Github", linkDestination: "www.github.com/samuelesimone")
