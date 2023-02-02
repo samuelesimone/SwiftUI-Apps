@@ -44,9 +44,22 @@ struct SettingView: View {
                             .multilineTextAlignment(.leading)
                             
                         Toggle(isOn: $isOnboarding, label: {
-                            Text("Restart".uppercased())
-                                .padding()
-                        })
+                            if isOnboarding {
+                                Text("Restarted".uppercased())
+                                    .padding()
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.green)
+                            } else {
+                                Text("Restart".uppercased())
+                                    .padding()
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.secondary)
+                            }
+                        }).padding()
+                        .background(
+                            Color(UIColor.tertiarySystemBackground)
+                                .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+                        )
                     }.padding()
                     
                     //MARK: - SECTION 3
