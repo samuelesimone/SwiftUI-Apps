@@ -10,6 +10,7 @@
 		9882D719298C3945002F5B66 /* sound-rise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9882D716298C3945002F5B66 /* sound-rise.mp3 */; };
 		9882D71A298C3945002F5B66 /* sound-ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9882D717298C3945002F5B66 /* sound-ding.mp3 */; };
 		9882D71B298C3945002F5B66 /* sound-tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9882D718298C3945002F5B66 /* sound-tap.mp3 */; };
+		9882D724298C66B2002F5B66 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9882D723298C66B2002F5B66 /* Constant.swift */; };
 		98A73EE7298C385B00C2792D /* DevoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A73EE6298C385B00C2792D /* DevoteApp.swift */; };
 		98A73EE9298C385B00C2792D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A73EE8298C385B00C2792D /* ContentView.swift */; };
 		98A73EEB298C386100C2792D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A73EEA298C386100C2792D /* Assets.xcassets */; };
@@ -22,6 +23,8 @@
 		9882D716298C3945002F5B66 /* sound-rise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-rise.mp3"; sourceTree = "<group>"; };
 		9882D717298C3945002F5B66 /* sound-ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-ding.mp3"; sourceTree = "<group>"; };
 		9882D718298C3945002F5B66 /* sound-tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-tap.mp3"; sourceTree = "<group>"; };
+		9882D722298C5A73002F5B66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9882D723298C66B2002F5B66 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		98A73EE3298C385B00C2792D /* Devote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Devote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98A73EE6298C385B00C2792D /* DevoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevoteApp.swift; sourceTree = "<group>"; };
 		98A73EE8298C385B00C2792D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,6 +63,37 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		9882D71E298C598C002F5B66 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		9882D71F298C5994002F5B66 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				9882D723298C66B2002F5B66 /* Constant.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		9882D720298C59AB002F5B66 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		9882D721298C5A22002F5B66 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				98A73EEF298C386100C2792D /* Persistence.swift */,
+				98A73EF1298C386100C2792D /* Devote.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		98A73EDA298C385B00C2792D = {
 			isa = PBXGroup;
 			children = (
@@ -79,11 +113,14 @@
 		98A73EE5298C385B00C2792D /* Devote */ = {
 			isa = PBXGroup;
 			children = (
+				9882D722298C5A73002F5B66 /* Info.plist */,
+				9882D720298C59AB002F5B66 /* Style */,
+				9882D71F298C5994002F5B66 /* Utility */,
+				9882D721298C5A22002F5B66 /* Model */,
+				9882D71E298C598C002F5B66 /* Extension */,
 				98A73EE6298C385B00C2792D /* DevoteApp.swift */,
 				9882D71D298C3A6B002F5B66 /* App */,
 				98A73EEA298C386100C2792D /* Assets.xcassets */,
-				98A73EEF298C386100C2792D /* Persistence.swift */,
-				98A73EF1298C386100C2792D /* Devote.xcdatamodeld */,
 				9882D71C298C396C002F5B66 /* Sounds */,
 				98A73EEC298C386100C2792D /* Preview Content */,
 			);
@@ -173,6 +210,7 @@
 			files = (
 				98A73EF0298C386100C2792D /* Persistence.swift in Sources */,
 				98A73EE9298C385B00C2792D /* ContentView.swift in Sources */,
+				9882D724298C66B2002F5B66 /* Constant.swift in Sources */,
 				98A73EF3298C386100C2792D /* Devote.xcdatamodeld in Sources */,
 				98A73EE7298C385B00C2792D /* DevoteApp.swift in Sources */,
 			);
@@ -306,11 +344,10 @@
 				DEVELOPMENT_TEAM = QLRWF66QUK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Devote/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,11 +372,10 @@
 				DEVELOPMENT_TEAM = QLRWF66QUK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Devote/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
