@@ -15,7 +15,35 @@ struct SettingView: View {
         NavigationView{
             ScrollView(.vertical, showsIndicators: false){
                 VStack(spacing: 20) {
-                    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                    //MARK: - SECTION 1
+                    GroupBox(
+                        label: SettingsLabelView(labelText: "Fructus", labelImage: "info.circle")
+                    ){
+                        Divider().padding(.vertical,4)
+                        HStack(alignment: .center, spacing: 10) {
+                            Image("logo")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 80,height: 80)
+                                .cornerRadius(9)
+                            Text("I frutti sono essenziali nella nostra vita perche contegono nutrienti quali calcio,potassio, magnesio necessari per l'uomo")
+                                .font(.footnote)
+                               
+                        }
+                    }.padding()
+                    //MARK: - SECTION 2
+                    
+                    //MARK: - SECTION 3
+                    GroupBox(label:
+                                SettingsLabelView(labelText: "Application",labelImage: "apps.iphone"))
+                            {
+                                
+                                
+                                SettingsRowView(name: "Design", content: "Swift Course")
+                                SettingsRowView(name: "Compatibility", content: "iOS 16")
+                                SettingsRowView(name: "Website", linkLabel: "Github", linkDestination: "www.github.com/samuelesimone")
+                                
+                            }.padding() //BOX
                 }//: VSTACK
                 .navigationTitle("Settings")
                 .navigationBarItems(
