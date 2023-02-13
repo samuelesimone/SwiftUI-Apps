@@ -11,6 +11,7 @@
 		9882D71A298C3945002F5B66 /* sound-ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9882D717298C3945002F5B66 /* sound-ding.mp3 */; };
 		9882D71B298C3945002F5B66 /* sound-tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9882D718298C3945002F5B66 /* sound-tap.mp3 */; };
 		9882D724298C66B2002F5B66 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9882D723298C66B2002F5B66 /* Constant.swift */; };
+		9882D726299AB26D002F5B66 /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9882D725299AB26D002F5B66 /* HideKeyboardExtension.swift */; };
 		98A73EE7298C385B00C2792D /* DevoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A73EE6298C385B00C2792D /* DevoteApp.swift */; };
 		98A73EE9298C385B00C2792D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A73EE8298C385B00C2792D /* ContentView.swift */; };
 		98A73EEB298C386100C2792D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A73EEA298C386100C2792D /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		9882D718298C3945002F5B66 /* sound-tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-tap.mp3"; sourceTree = "<group>"; };
 		9882D722298C5A73002F5B66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9882D723298C66B2002F5B66 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		9882D725299AB26D002F5B66 /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
 		98A73EE3298C385B00C2792D /* Devote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Devote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98A73EE6298C385B00C2792D /* DevoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevoteApp.swift; sourceTree = "<group>"; };
 		98A73EE8298C385B00C2792D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 		9882D71E298C598C002F5B66 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				9882D725299AB26D002F5B66 /* HideKeyboardExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			files = (
 				98A73EF0298C386100C2792D /* Persistence.swift in Sources */,
 				98A73EE9298C385B00C2792D /* ContentView.swift in Sources */,
+				9882D726299AB26D002F5B66 /* HideKeyboardExtension.swift in Sources */,
 				9882D724298C66B2002F5B66 /* Constant.swift in Sources */,
 				98A73EF3298C386100C2792D /* Devote.xcdatamodeld in Sources */,
 				98A73EE7298C385B00C2792D /* DevoteApp.swift in Sources */,

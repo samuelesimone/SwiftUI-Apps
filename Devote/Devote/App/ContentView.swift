@@ -10,6 +10,10 @@ import CoreData
 
 struct ContentView: View {
     //MARK: - 1. PROPERTIES
+    @State var task: String = ""
+    private var isButtonDisable: Bool {
+        task.isEmpty
+    }
     @Environment(\.managedObjectContext) private var viewContext
     
     //FETCHING DATA
@@ -23,13 +27,16 @@ struct ContentView: View {
         withAnimation {
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
-            
+            newItem.task = task
+        
             do {
                 try viewContext.save()
             } catch {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
+            task = ""
+            hideKeyBoard()
         }
     }
     
@@ -50,29 +57,70 @@ struct ContentView: View {
     //MARK: - BODY
     var body: some View {
         NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
+           
+            ZStack {
+                VStack {
+                    VStack {
+                        TextField("New Task", text:$task)
+                            .padding()
+                            .background(
+                                Color( UIColor.systemGray6))
+                        .cornerRadius(10)
+                        Button(action: {
+                            addItem()
+                        }, label: {
+                            Spacer()
+                            Text("SAVE")
+                            Spacer()
+                        })
+                        .disabled(isButtonDisable)
+                        .padding()
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .background(isButtonDisable ? Color.gray : Color.pink)
+                        .cornerRadius(10)
+                    }.padding()
+                    
+                    List {
+                        ForEach(items) { item in
+                            NavigationLink {
+                                VStack(alignment: .leading) {
+                                    Text(item.task ?? "")
+                                        .font(.headline)
+                                        .fontWeight(.bold)
+                                    Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                                        .font(.footnote)
+                                        .foregroundColor(.gray)
+                                }//: LIST ITEM
+                            } label: {
+                                Text(item.timestamp!, formatter: itemFormatter)
+                            }
+                        }
+                        .onDelete(perform: deleteItems)
+                    }.listStyle(InsetGroupedListStyle())
+                  
                 }
-                .onDelete(perform: deleteItems)
+               
+                
             }
+            .onAppear(){
+                UITableView.appearance().backgroundColor = UIColor.clear
+            }
+            .navigationTitle("Daily Tasks")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
+                
+        }
+            
+            .navigationViewStyle(StackNavigationViewStyle())
+            .background(backgroundGradient.ignoresSafeArea(.all))
             Text("Select an item")
         }
+        
     }
+    
 }
 
 private let itemFormatter: DateFormatter = {
